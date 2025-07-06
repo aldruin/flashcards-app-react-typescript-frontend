@@ -24,6 +24,7 @@
   height: 100%;
   backface-visibility: hidden;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
@@ -32,7 +33,7 @@
   background-color: #f8f8f8;
 }
 
-.flashcard-back{
+.flashcard-back {
   transform: rotateY(180deg);
   background-color: #e8e8ff
 }
