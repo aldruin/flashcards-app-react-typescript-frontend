@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import TutorialOverlaySpotlight from '../components/TutorialOverlaySpotlight';
 import CriarFlashcard from '../components/CriarFlashcard';
 import ModalEdicaoFlashcard from '../components/ModalEdicaoFlashcard';
 import FlashcardList from '../components/FlashcardList';
+import './Flashcards.css';
 
 const Flashcards = () => {
   const [cards, setCards] = useState([
@@ -78,9 +80,11 @@ const Flashcards = () => {
     }
   };
 
+  const [tutorialPasso, setTutorialPasso] = useState(0);
+
 
   return (
-    <div>
+    <div className="flashcards-container">
       <h1>Flashcards de Estudo</h1>
 
       <CriarFlashcard onCriar={criarCard} />
@@ -98,6 +102,14 @@ const Flashcards = () => {
           onFechar={() => setEditandoCard(null)}
         />
       )}
+
+      <TutorialOverlaySpotlight
+        passoAtual={tutorialPasso}
+        onAvancar={() => setTutorialPasso(prev => prev + 1)}
+        onPular={() => setTutorialPasso(999)}
+      />
+
+
     </div>
   );
 };

@@ -1,32 +1,38 @@
-.form-flashcard{
+.form-flashcard {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 300px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px dashed #bbb;
+  border: 1px dashed var(--form-border);
   border-radius: 10px;
-  background-color: #fafafa;
+  background-color: var(--form-bg);
+  color: var(--form-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.form-flashcard input{
+.form-flashcard input {
   padding: 8px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  background-color: var(--form-input-bg);
+  color: var(--form-text);
+  border: 1px solid var(--form-input-border);
   border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.form-flashcard button{
+.form-flashcard button {
   padding: 10px;
-  background-color: #3f51b5;
+  background-color: var(--form-button-bg);
   color: white;
   border: none;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.form-flashcard button:hover{
-  background-color: #303f9f;
+.form-flashcard button:hover {
+  background-color: var(--form-button-hover);
 }

@@ -14,13 +14,14 @@
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   z-index: 10;
 }
 
 .flashcard-acoes span {
   cursor: pointer;
-  background-color: white;
+  background-color: var(--icon-bg);
+  color: var(--text-color);
   padding: 4px 6px;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -28,34 +29,7 @@
 }
 
 .flashcard-acoes span:hover {
-  background-color: #f1f1f1;
-}
-
-.confirmacao-inline {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 6px 10px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: 0.85rem;
-  z-index: 10;
-}
-
-.confirmacao-inline button {
-  background-color: #e53935;
-  color: white;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.8rem;
-}
-
-.confirmacao-inline button:last-child {
-  background-color: #9e9e9e;
+  background-color: var(--icon-bg-hover);
 }
 
 .flashcard-inner {
@@ -81,12 +55,38 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f8f8f8;
+  background-color: var(--card-bg-front);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+
 }
 
 .flashcard-back {
   transform: rotateY(180deg);
-  background-color: #e8e8ff
+  background-color: var(--card-bg-back);
+
+}
+
+.confirmacao-inline {
+  background-color: var(--confirm-bg);
+  color: var(--text-color);
+  display: flex;
+  bottom: 8px;
+  left: 50%;
+  gap: 10px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.confirmacao-inline button {
+  background-color: var(--button-danger);
+  color: white;
+  border-radius: 7px;
+  border: none;
+}
+
+.confirmacao-inline button:last-child {
+  background-color: var(--button-neutral);
 }

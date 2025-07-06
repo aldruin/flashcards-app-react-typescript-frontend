@@ -1,0 +1,87 @@
+:root {
+  --bg: #ffffff;
+
+  --card-bg-front: #f8f8f8;
+  --card-bg-back: #e8e8ff;
+  --card-border: #ccc;
+  --text-color: #212121;
+  --icon-bg: white;
+  --icon-bg-hover: #f1f1f1;
+  --confirm-bg: #ffffff;
+  --confirm-border: #ccc;
+  --button-danger: #e53935;
+  --button-neutral: #9e9e9e;
+  --modal-bg: #ffffff;
+  --modal-text: #212121;
+  --modal-close-btn: #9e9e9e;
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+  --form-bg: #fafafa;
+  --form-border: #bbb;
+  --form-input-bg: #ffffff;
+  --form-input-border: #ccc;
+  --form-text: #212121;
+  --form-button-bg: #3f51b5;
+  --form-button-hover: #303f9f;
+  --tutorial-overlay-bg: rgba(30, 30, 30, 0.6);
+  --tutorial-bg: #fff;
+  --tutorial-text: #212121;
+  --tutorial-button-bg: #3f51b5;
+  --tutorial-button-text: white;
+  --tutorial-skip-bg: #9e9e9e;
+  --spotlight-overlay-bg: rgba(0, 0, 0, 0.6);
+  --highlight-border: #ffd700;
+  --highlight-glow: #ffd700;
+  --explicacao-bg: #ffffff;
+  --explicacao-text: #212121;
+  --explicacao-shadow: rgba(0, 0, 0, 0.3);
+  --tutorial-btn-primary: #3f51b5;
+  --tutorial-btn-secondary: #9e9e9e;
+}
+
+.dark-mode {
+  --bg: #121212;
+
+  --card-bg-front: #1c1c1c;
+  --card-bg-back: #2b2b40;
+  --card-border: #444;
+  --text-color: #e0e0e0;
+  --icon-bg: #2c2c2c;
+  --icon-bg-hover: #3c3c3c;
+  --confirm-bg: #262626;
+  --confirm-border: #555;
+  --button-danger: #f44336;
+  --button-neutral: #757575;
+  --modal-bg: #1f1f1f;
+  --modal-text: #e0e0e0;
+  --modal-close-btn: #757575;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --form-bg: #1e1e1e;
+  --form-border: #444;
+  --form-input-bg: #2a2a2a;
+  --form-input-border: #555;
+  --form-text: #e0e0e0;
+  --form-button-bg: #5c85ff;
+  --form-button-hover: #3c5fc4;
+  --tutorial-overlay-bg: rgba(0, 0, 0, 0.8);
+  --tutorial-bg: #1f1f1f;
+  --tutorial-text: #e0e0e0;
+  --tutorial-button-bg: #5c85ff;
+  --tutorial-button-text: white;
+  --tutorial-skip-bg: #757575;
+  --spotlight-overlay-bg: rgba(0, 0, 0, 0.85);
+  --highlight-border: #ffee58;
+  --highlight-glow: #ffee58;
+  --explicacao-bg: #1f1f1f;
+  --explicacao-text: #e0e0e0;
+  --explicacao-shadow: rgba(0, 0, 0, 0.6);
+  --tutorial-btn-primary: #5c85ff;
+  --tutorial-btn-secondary: #757575;
+
+}
+
+body,
+.flashcard-list {
+  background-color: var(--bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

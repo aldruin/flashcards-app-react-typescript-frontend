@@ -1,0 +1,13 @@
+.flashcards-container {
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.flashcards-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
