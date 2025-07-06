@@ -9,9 +9,11 @@ interface FlashcardData {
 
 interface FlashcardListProps {
   cards: FlashcardData[];
+  onExcluir?: (id: string) => void;
+  onEditar?: (card: FlashcardData) => void;
 }
 
-const FlashcardList = ({ cards }: FlashcardListProps) => {
+const FlashcardList = ({ cards, onExcluir, onEditar }: FlashcardListProps) => {
   return (
     <div className="flashcard-list">
       {cards.map((card) => (
@@ -19,6 +21,8 @@ const FlashcardList = ({ cards }: FlashcardListProps) => {
           key={card.id}
           pergunta={card.pergunta}
           resposta={card.resposta}
+          onExcluir={() => onExcluir?.(card.id)}
+          onEditar={() => onEditar?.(card)}
         />
       ))}
     </div>

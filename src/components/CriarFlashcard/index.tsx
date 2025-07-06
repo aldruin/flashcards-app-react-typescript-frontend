@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './CriarFlashcard.css';
 
 interface CriarFlashcardProps {
-  onCriar: (novoCard: { pergunta: string; resposta: string}) => void;
+  onCriar: (novoCard: { pergunta: string; resposta: string }) => void;
+  cardInicial?: { pergunta: string; resposta: string };
+  modoEdicao?: boolean;
 }
 
-const CriarFlashcard = ({ onCriar }: CriarFlashcardProps) => {
+const CriarFlashcard = ({ onCriar, cardInicial, modoEdicao = false }: CriarFlashcardProps) => {
   const [pergunta, setPergunta] = useState('');
   const [resposta, setResposta] = useState('');
+
+  useEffect(() => {
+    if (cardInicial) {
+      setPergunta(cardInicial.pergunta);
+      setResposta(cardInicial.resposta);
+    }
+  }, [cardInicial]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,34 +24,38 @@ const CriarFlashcard = ({ onCriar }: CriarFlashcardProps) => {
       alert('Por favor, preencha ambos os campos!');
       return;
     }
-    
+
     onCriar({ pergunta, resposta });
 
-    setPergunta('');
-    setResposta('');
+    if (!modoEdicao) {
+      setPergunta('');
+      setResposta('');
+    }
+
   };
 
-  return(
+  return (
     <form className="form-flashcard" onSubmit={handleSubmit}>
-      <h2>Criar novo Card</h2>
+      <h2>{modoEdicao ? 'Editar Flashcard' : 'Criar novo Flashcard'}</h2>
 
       <input
-      type="text"
-      placeholder="Pergunta"
-      value={pergunta}
-      onChange={(e) => setPergunta(e.target.value)}
+        type="text"
+        placeholder="Pergunta"
+        value={pergunta}
+        onChange={(e) => setPergunta(e.target.value)}
       />
 
       <input
-      type="text"
-      placeholder="Resposta"
-      value={resposta}
-      onChange={(e) => setResposta(e.target.value)}
+        type="text"
+        placeholder="Resposta"
+        value={resposta}
+        onChange={(e) => setResposta(e.target.value)}
       />
 
-      <button type="submit">Salvar</button>
+      <button type="submit">{modoEdicao ? 'Salvar alterações' : 'Salvar'}</button>
     </form>
   );
 };
+
 
 export default CriarFlashcard;
