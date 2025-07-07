@@ -24,10 +24,10 @@ const Flashcard = ({ pergunta, resposta, onExcluir, onEditar }: FlashcardProps) 
     <div className="flashcard" onClick={handleClick}>
       <div className={`flashcard-inner ${virado ? 'flipped' : ''}`}>
         <div className="flashcard-front">
-          <p>{pergunta}</p>
+          <div className="flashcard-texto">{pergunta}</div>
         </div>
         <div className="flashcard-back">
-          <p>{resposta}</p>
+          <div className="flashcard-texto">{resposta}</div>
         </div>
       </div>
       <div className="flashcard-acoes">

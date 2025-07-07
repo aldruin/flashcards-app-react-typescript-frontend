@@ -7,6 +7,18 @@
   margin-bottom: 20px;
 }
 
+.flashcard-texto {
+  padding: 1rem;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
 .flashcard-acoes {
   position: absolute;
   bottom: 8px;
