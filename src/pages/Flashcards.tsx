@@ -68,6 +68,10 @@ const Flashcards = () => {
 
   const [tutorialVisivel, setTutorialVisivel] = useState(false);
 
+  const reordenarCards = (novos: Flashcard[]) => {
+    setCards(novos);
+  };
+
   useEffect(() => {
     const jaViuTutorial = localStorage.getItem('tutorial-visto');
     if (!jaViuTutorial) {
@@ -91,6 +95,7 @@ const Flashcards = () => {
         cards={cards}
         onExcluir={excluirCard}
         onEditar={(card) => setEditandoCard(card)}
+        onReordenar={reordenarCards}
       />
 
       {editandoCard && (
