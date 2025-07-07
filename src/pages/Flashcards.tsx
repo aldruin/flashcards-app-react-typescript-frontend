@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TutorialOverlaySpotlight from '../components/TutorialOverlaySpotlight';
 import CriarFlashcard from '../components/CriarFlashcard';
 import ModalEdicaoFlashcard from '../components/ModalEdicaoFlashcard';
@@ -82,6 +82,16 @@ const Flashcards = () => {
 
   const [tutorialPasso, setTutorialPasso] = useState(0);
 
+  const [tutorialVisivel, setTutorialVisivel] = useState(false);
+
+  useEffect(() => {
+    const jaViuTutorial = localStorage.getItem('tutorial-visto');
+    if (!jaViuTutorial) {
+      setTutorialVisivel(true); // exibe na primeira vez
+      localStorage.setItem('tutorial-visto', 'true'); // marca como visto
+    }
+  }, []);
+
 
   return (
     <div className="flashcards-container">
@@ -103,11 +113,18 @@ const Flashcards = () => {
         />
       )}
 
-      <TutorialOverlaySpotlight
-        passoAtual={tutorialPasso}
-        onAvancar={() => setTutorialPasso(prev => prev + 1)}
-        onPular={() => setTutorialPasso(999)}
-      />
+      {tutorialVisivel && (
+        <TutorialOverlaySpotlight
+          passoAtual={tutorialPasso}
+          onAvancar={() => {
+            const proximo = tutorialPasso + 1;
+            if (proximo >= 3) setTutorialVisivel(false);
+            setTutorialPasso(proximo);
+          }}
+          onPular={() => setTutorialVisivel(false)}
+        />
+      )}
+
 
 
     </div>
