@@ -1,0 +1,1 @@
+// implementação futura para integração com backend
